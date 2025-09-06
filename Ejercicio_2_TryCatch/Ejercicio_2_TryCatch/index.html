@@ -1,0 +1,103 @@
+<!doctype html>
+<html lang="es">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Registro con Manejo de Excepciones — Ejercicio 2</title>
+  <link rel="stylesheet" href="styles.css" />
+  <script defer src="app.js"></script>
+</head>
+<body>
+  <main class="container">
+    <h2>Registro al Taller de Innovación 2025 (con try–catch)</h2>
+
+    <div id="feedback" class="feedback" aria-live="assertive" role="alert" hidden></div>
+
+    <form id="formRegistro" novalidate>
+      <div class="grid">
+        <div class="form-control">
+          <label for="nombre">Nombre completo *</label>
+          <input id="nombre" name="nombre" type="text" placeholder="Ana Pérez" required />
+        </div>
+
+        <div class="form-control">
+          <label for="correo">Correo electrónico *</label>
+          <input id="correo" name="correo" type="email" placeholder="ana@example.com" required />
+        </div>
+
+        <div class="form-control">
+          <label for="edad">Edad</label>
+          <input id="edad" name="edad" type="number" min="1" max="120" placeholder="25" />
+        </div>
+
+        <fieldset class="form-control">
+          <legend>Género</legend>
+          <div class="inline">
+            <label><input type="radio" name="genero" value="Femenino" /> Femenino</label>
+            <label><input type="radio" name="genero" value="Masculino" /> Masculino</label>
+            <label><input type="radio" name="genero" value="Prefiero no decir" /> Prefiero no decir</label>
+          </div>
+        </fieldset>
+
+        <fieldset class="form-control intereses">
+          <legend>Áreas de interés</legend>
+          <div class="inline">
+            <label><input type="checkbox" value="IA" /> IA</label>
+            <label><input type="checkbox" value="Desarrollo Web" /> Desarrollo Web</label>
+            <label><input type="checkbox" value="Redes" /> Redes</label>
+            <label><input type="checkbox" value="UX/UI" /> UX/UI</label>
+          </div>
+        </fieldset>
+
+        <div class="form-control">
+          <label for="nivel">Nivel de experiencia</label>
+          <select id="nivel" name="nivel">
+            <option value="Principiante">Principiante</option>
+            <option value="Intermedio" selected>Intermedio</option>
+            <option value="Avanzado">Avanzado</option>
+          </select>
+        </div>
+
+        <div class="form-control">
+          <label for="fecha">Fecha</label>
+          <input id="fecha" name="fecha" type="date" />
+        </div>
+
+        <div class="form-control span-2">
+          <label for="comentarios">Comentarios</label>
+          <textarea id="comentarios" name="comentarios" rows="3" placeholder="Observaciones adicionales..."></textarea>
+        </div>
+      </div>
+
+      <div class="actions">
+        <button type="submit" class="btn btn--primary">Enviar</button>
+        <button type="reset" class="btn btn--neutral">Limpiar</button>
+      </div>
+    </form>
+
+    <h3>Participantes Registrados</h3>
+
+    <div class="table-wrapper">
+      <table id="tablaRegistros" aria-describedby="tablaDesc">
+        <caption id="tablaDesc" class="visually-hidden">Tabla dinámica de registros enviados</caption>
+        <thead>
+          <tr>
+            <th>Nombre</th>
+            <th>Correo</th>
+            <th>Edad</th>
+            <th>Género</th>
+            <th>Intereses</th>
+            <th>Nivel</th>
+            <th>Fecha</th>
+            <th>Comentarios</th>
+            <th>Acción</th>
+          </tr>
+        </thead>
+        <tbody>
+          <!-- Filas dinámicas aquí -->
+        </tbody>
+      </table>
+    </div>
+  </main>
+</body>
+</html>
